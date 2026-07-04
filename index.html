@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erin Tabatabaei — Piano Lessons</title>
+  <meta name="description" content="Private, online, beginner and exam-prep piano lessons with Erin Tabatabaei. Watch performances and book your first lesson today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=11" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__brand">Erin&nbsp;Tabatabaei</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#videos">Performances</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="nav__cta">Free Trial</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Pianist &amp; Teacher</p>
+      <h1 class="hero__title">Where Technique<br />Meets <em>Expression</em></h1>
+      <p class="hero__subtitle">
+        Private piano lessons rooted in strong musicianship, thoughtful instruction, and a
+        genuine love of music. Whether you're learning your first piece, preparing for
+        examinations, or developing advanced repertoire, lessons are tailored to your goals.
+        Begin with a complimentary 30-minute trial lesson.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary">Book a Free Trial</a>
+        <a href="#videos" class="btn btn--ghost">Watch Me Play</a>
+      </div>
+    </div>
+
+    <!-- Animated piano keyboard (decorative) -->
+    <div class="keyboard" aria-hidden="true">
+      <svg class="keyboard__svg" viewBox="0 0 620 250" role="img">
+        <defs>
+          <linearGradient id="kbCase" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2c2419" />
+            <stop offset="0.5" stop-color="#181208" />
+            <stop offset="1" stop-color="#0a0705" />
+          </linearGradient>
+          <linearGradient id="kbWhite" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fffefb" />
+            <stop offset="0.8" stop-color="#f4ecda" />
+            <stop offset="1" stop-color="#e3d3b3" />
+          </linearGradient>
+          <linearGradient id="kbBlack" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4a4036" />
+            <stop offset="0.18" stop-color="#211b13" />
+            <stop offset="1" stop-color="#080605" />
+          </linearGradient>
+          <linearGradient id="kbRed" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#9a3526" />
+            <stop offset="1" stop-color="#5e1f16" />
+          </linearGradient>
+          <linearGradient id="kbGold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f6e0a4" />
+            <stop offset="0.5" stop-color="#caa45c" />
+            <stop offset="1" stop-color="#8c6a22" />
+          </linearGradient>
+          <radialGradient id="kbFloor" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#241a0a" stop-opacity="0.3" />
+            <stop offset="1" stop-color="#241a0a" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- soft floor shadow -->
+        <ellipse class="kb-shadow" cx="310" cy="244" rx="280" ry="12" fill="url(#kbFloor)" />
+
+        <g class="kb-float">
+          <!-- top rail / case with the engraved name -->
+          <rect x="22" y="60" width="576" height="36" rx="7" fill="url(#kbCase)" stroke="url(#kbGold)" stroke-width="1" stroke-opacity="0.35" />
+          <rect x="30" y="64" width="560" height="3" rx="1.5" fill="#ffffff" opacity="0.06" />
+          <text class="gp-brand" x="310" y="84" text-anchor="middle">ERIN&#160;&#160;&#160;TABATABAEI</text>
+
+          <!-- red felt strip behind the keys -->
+          <rect x="26" y="96" width="568" height="5" fill="url(#kbRed)" />
+
+          <!-- dark backdrop so the gaps between keys read -->
+          <rect x="26" y="101" width="568" height="146" rx="4" fill="#14100b" />
+
+          <!-- keyboard (generated) -->
+          <g class="gp-keys" id="gpKeys"></g>
+
+          <!-- recess shadow across the top of the keys -->
+          <rect x="26" y="101" width="568" height="6" fill="#000" opacity="0.28" />
+        </g>
+
+        <!-- drifting notes (generated) -->
+        <g class="gp-notes" id="gpNotes"></g>
+      </svg>
+    </div>
+
+    <a href="#about" class="hero__scroll" aria-label="Scroll down">&#8595;</a>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="container about__grid" data-reveal>
+      <div class="about__photo">
+        <div class="about__photo-frame">
+          <img src="images/piano%20image.jpg" alt="Erin Tabatabaei performing at a grand piano"
+               onerror="this.closest('.about__photo-frame').classList.add('is-missing')" />
+          <div class="about__photo-fallback">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M8 5v9M12 5v9M16 5v9M3 14h18"/></svg>
+            <small>Add <b>piano image.jpg</b> to the <b>images</b> folder to display it here.</small>
+          </div>
+        </div>
+      </div>
+      <div class="about__text">
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">Building Musicians for Life</h2>
+        <p>
+          I am Erin Tabatabaei, a pianist and teacher with over four years of teaching
+          experience. My musical training includes the Royal Conservatory of Music
+          curriculum, completion of the RCM Level 10 Practical Examination, and Level 9
+          Harmony studies. I am currently working toward the Associate Diploma (ARCT), one of
+          the RCM's highest performance credentials.
+        </p>
+        <p>
+          My teaching combines strong technical foundations with musical expression, helping
+          students become confident, independent musicians. I teach students of all ages and
+          levels, from complete beginners to more advanced pianists, with lessons tailored to
+          each individual's goals and interests. Whether a student enjoys classical
+          repertoire, contemporary music, or examination preparation, I strive to make
+          learning both challenging and rewarding.
+        </p>
+        <p>
+          In addition to teaching, I regularly perform in community settings, including
+          nursing homes and church services. I also share piano performances online through
+          Instagram, TikTok, and YouTube, allowing me to connect with a wider audience and
+          continue growing as a musician.
+        </p>
+        <ul class="about__stats">
+          <li><strong>4+ Years</strong><span>Teaching experience</span></li>
+          <li><strong>RCM Level 10</strong><span>Practical Examination</span></li>
+          <li><strong>ARCT</strong><span>Diploma candidate</span></li>
+          <li><strong>In-person<br />&amp; online</strong><span>Flexible lessons</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <p class="section__eyebrow">Services</p>
+        <h2 class="section__title">Lessons for every stage</h2>
+        <p class="section__lead">
+          Each lesson is personalised. Below are the programs I offer — reach out and we'll
+          find the right fit for you.
+        </p>
+      </div>
+      <div class="cards" data-reveal>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M8 5v9M12 5v9M16 5v9M3 14h18"/></svg></div>
+          <h3>Private Lessons</h3>
+          <p>
+            Individual lessons designed around each student's goals, learning style, and
+            musical interests. Students receive personalized instruction focused on technique,
+            musicianship, repertoire, and long-term growth.
+          </p>
+          <span class="card__tag">One-on-One</span>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="18" r="2.6"/><circle cx="17" cy="16" r="2.6"/><path d="M9.6 18V6l10-2v12"/><path d="M9.6 8.5l10-2"/></svg></div>
+          <h3>Beginner &amp; Kids</h3>
+          <p>
+            A welcoming introduction to piano for young students and first-time learners.
+            Lessons develop rhythm, note reading, technique, and confidence while fostering a
+            genuine enjoyment of music.
+          </p>
+          <span class="card__tag">Strong Foundations</span>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.2L7 21l5-2.8L17 21l-1.5-7.8"/></svg></div>
+          <h3>Exam &amp; Theory Preparation</h3>
+          <p>
+            Focused preparation for Royal Conservatory of Music examinations, including
+            performance, theory, harmony, sight-reading, and ear training. Students build the
+            skills necessary for success while developing a deeper understanding of music.
+          </p>
+          <span class="card__tag">RCM Preparation</span>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 16v4"/></svg></div>
+          <h3>Online Lessons</h3>
+          <p>
+            Flexible online instruction offering the same individualized guidance as in-person
+            lessons. Ideal for busy families, distance learning, and students seeking
+            high-quality piano instruction from home.
+          </p>
+          <span class="card__tag">Learn Anywhere</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section class="section videos" id="videos">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <p class="section__eyebrow">Performances</p>
+        <h2 class="section__title">Watch me play</h2>
+        <p class="section__lead">
+          A selection of recordings from recent performances. Follow along on
+          Instagram, TikTok, and YouTube for more.
+        </p>
+      </div>
+      <div class="video-grid" data-reveal>
+        <!-- To add your own: replace VIDEO_ID in the src with your YouTube video's ID
+             (the part after "watch?v=" in the URL). -->
+        <figure class="video">
+          <div class="video__frame">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Performance 1"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <figcaption>Valse Romantique — Claude Debussy</figcaption>
+        </figure>
+        <figure class="video">
+          <div class="video__frame">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Performance 2"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <figcaption>Fantaisie-Impromptu, Op. 66 — Frédéric Chopin</figcaption>
+        </figure>
+        <figure class="video">
+          <div class="video__frame">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Performance 3"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <figcaption>Liebestraum No. 3 — Franz Liszt</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <p class="section__eyebrow">Pricing</p>
+        <h2 class="section__title">Simple, Transparent Pricing</h2>
+      </div>
+      <div class="price-card" data-reveal>
+        <p class="price-card__label">Private Piano Lessons</p>
+        <p class="price-card__amount">$50<span>/ hour</span></p>
+        <p class="price-card__note">
+          Every student begins with a complimentary 30-minute trial lesson. This allows us to
+          discuss goals, assess current experience, and ensure lessons are the right fit before
+          making any commitment.
+        </p>
+        <p class="price-card__meta">Lessons are available both in person and online.</p>
+        <a href="#contact" class="btn btn--primary">Book Your Free Trial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container contact__grid" data-reveal>
+      <div class="contact__intro">
+        <p class="section__eyebrow">Get in touch</p>
+        <h2 class="section__title">Begin Your Musical Journey</h2>
+        <p class="section__lead">
+          Whether you're looking for your first piano lesson or pursuing advanced musical
+          goals, I would be delighted to help you grow as a pianist. Reach out to schedule
+          your complimentary 30-minute trial lesson and discuss how we can work together.
+        </p>
+        <ul class="contact__details">
+          <li><span>Email</span><a href="mailto:erintpiano@gmail.com">erintpiano@gmail.com</a></li>
+          <li><span>Lessons</span>In-person &amp; online</li>
+          <li><span>Trial</span>Complimentary 30-minute session</li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/erin.t.piano/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5 0-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.4 8.5 3.4 8.85 3.4 12s0 3.5.07 4.74c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.07 1.59.07 4.74.07s3.5 0 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.07-1.24.07-1.59.07-4.74s0-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.5 4 15.15 4 12 4zm0 3.07a4.93 4.93 0 1 1 0 9.86 4.93 4.93 0 0 1 0-9.86zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26zm5.15-2.02a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@erintpiano" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82c-.88-1-1.36-2.28-1.36-3.62h-3.3v13.2a2.98 2.98 0 0 1-2.98 2.84 2.98 2.98 0 0 1-.7-5.87v-3.4a6.33 6.33 0 0 0-5.6 6.27A6.33 6.33 0 0 0 8.99 21.5a6.33 6.33 0 0 0 6.33-6.33V8.66a7.6 7.6 0 0 0 4.45 1.43V6.78a4.3 4.3 0 0 1-3.16-.96z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@erintpiano" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.5a3.02 3.02 0 0 0-2.12-2.14C19.5 3.85 12 3.85 12 3.85s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51A3.02 3.02 0 0 0 23.5 17.5c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+          </a>
+        </div>
+      </div>
+      <form class="contact__form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms access key — get yours free at https://web3forms.com (enter erintpiano@gmail.com) -->
+        <input type="hidden" name="access_key" value="86e14ff6-685a-4168-87f2-af6f0964d8b6" />
+        <input type="hidden" name="subject" value="New piano lesson enquiry from your website" />
+        <input type="hidden" name="from_name" value="Erin Tabatabaei Piano Website" />
+        <!-- Honeypot anti-spam field (hidden from real visitors, only bots fill it) -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="field">
+          <label for="level">Experience level</label>
+          <select id="level" name="level">
+            <option>Complete beginner</option>
+            <option>Some experience</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+            <option>Exam preparation</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="What would you like to learn?"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand-block">
+        <span class="nav__brand">Erin Tabatabaei</span>
+        <p class="footer__tagline">Private piano lessons, in person and online. Where technique meets expression.</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/erin.t.piano/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5 0-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.4 8.5 3.4 8.85 3.4 12s0 3.5.07 4.74c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.07 1.59.07 4.74.07s3.5 0 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.07-1.24.07-1.59.07-4.74s0-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.5 4 15.15 4 12 4zm0 3.07a4.93 4.93 0 1 1 0 9.86 4.93 4.93 0 0 1 0-9.86zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26zm5.15-2.02a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@erintpiano" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82c-.88-1-1.36-2.28-1.36-3.62h-3.3v13.2a2.98 2.98 0 0 1-2.98 2.84 2.98 2.98 0 0 1-.7-5.87v-3.4a6.33 6.33 0 0 0-5.6 6.27A6.33 6.33 0 0 0 8.99 21.5a6.33 6.33 0 0 0 6.33-6.33V8.66a7.6 7.6 0 0 0 4.45 1.43V6.78a4.3 4.3 0 0 1-3.16-.96z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@erintpiano" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.5a3.02 3.02 0 0 0-2.12-2.14C19.5 3.85 12 3.85 12 3.85s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51A3.02 3.02 0 0 0 23.5 17.5c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+        </a>
+      </div>
+      <p>&copy; <span id="year"></span> Erin Tabatabaei · Piano Lessons</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=10"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erin Tabatabaei — Piano Lessons Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#faf6ee; --card:#fffdf8; --ink:#2c261d; --soft:#6f6657;
+      --line:#e7d9bd; --gold:#c9a35b; --gold-deep:#9a7526; --gold-bright:#f0d79b;
+      --serif:"Cormorant Garamond",Georgia,serif; --sans:"Inter",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html,body{background:#e9e2d3;}
+    body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;
+      padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+
+    /* US Letter, portrait */
+    .sheet{
+      width:8.5in;height:11in;background:var(--bg);position:relative;overflow:hidden;
+      box-shadow:0 18px 50px -20px rgba(120,92,36,.5);padding:0.5in;
+      background-image:
+        radial-gradient(ellipse 85% 40% at 50% -4%, rgba(201,163,91,.22), transparent 60%),
+        radial-gradient(ellipse 75% 38% at 50% 104%, rgba(201,163,91,.18), transparent 60%);
+    }
+    .frame{height:100%;border:1.5px solid var(--gold);outline:1px solid var(--gold);outline-offset:5px;border-radius:3px;
+      display:flex;flex-direction:column;align-items:center;text-align:center;padding:34px 44px 28px;}
+
+    .eyebrow{text-transform:uppercase;letter-spacing:.42em;font-size:12px;font-weight:600;color:var(--gold-deep);
+      display:flex;align-items:center;justify-content:center;gap:14px;}
+    .eyebrow::before,.eyebrow::after{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep));}
+    .eyebrow::after{background:linear-gradient(90deg,var(--gold-deep),transparent);}
+    h1{font-family:var(--serif);font-weight:700;font-size:56px;line-height:1.0;margin-top:12px;letter-spacing:.01em;}
+    .role{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold-deep);margin-top:3px;}
+
+    .keys{margin:16px auto 0;display:flex;width:230px;height:30px;border:1px solid var(--gold);border-radius:3px;overflow:hidden;
+      box-shadow:0 6px 14px -9px rgba(120,92,36,.55);}
+    .keys i{flex:1;background:linear-gradient(#fffefb,#efe3c9);border-right:1px solid #ddcaa3;position:relative;}
+    .keys i:last-child{border-right:0;}
+    .keys i.b::after{content:"";position:absolute;top:0;right:-4px;width:9px;height:18px;
+      background:linear-gradient(#3a3025,#0f0b07);border-radius:0 0 2px 2px;z-index:2;}
+
+    .hook{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.1;margin-top:22px;}
+    .hook em{font-style:italic;color:var(--gold-deep);}
+    .sub{font-size:14px;color:var(--soft);font-weight:300;max-width:5in;margin:11px auto 0;line-height:1.55;}
+
+    .offer{margin-top:22px;width:100%;max-width:5.2in;background:var(--card);border:1px solid var(--gold);
+      border-radius:15px;padding:20px 22px;position:relative;overflow:hidden;
+      box-shadow:0 18px 34px -24px rgba(154,117,38,.7);}
+    .offer::before{content:"";position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(130% 90% at 50% 0,rgba(240,215,155,.4),transparent 62%);}
+    .offer .tag{text-transform:uppercase;letter-spacing:.26em;font-size:11px;font-weight:600;color:var(--gold-deep);position:relative;}
+    .offer .big{font-family:var(--serif);font-weight:700;font-size:38px;line-height:1.05;margin-top:6px;position:relative;}
+    .offer .big span{color:var(--gold-deep);}
+    .offer .price{font-size:14px;color:var(--soft);margin-top:8px;position:relative;}
+    .offer .price b{color:var(--ink);font-weight:600;}
+
+    .props{display:flex;justify-content:center;gap:14px;margin-top:24px;}
+    .props div{display:flex;flex-direction:column;align-items:center;gap:8px;width:1.55in;}
+    .props .ic{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      font-size:20px;color:var(--gold-deep);border:1px solid var(--gold);
+      background:radial-gradient(circle at 30% 28%,rgba(240,215,155,.55),rgba(255,255,255,.45));}
+    .props b{font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.12;}
+    .props small{font-size:11.5px;color:var(--soft);line-height:1.3;}
+
+    .creds{margin-top:22px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;
+      display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
+    .creds span::before{content:"\25C6";color:var(--gold);margin-right:12px;font-size:8px;vertical-align:middle;}
+    .creds span:first-child::before{content:none;}
+
+    .contact{margin-top:auto;width:100%;padding-top:22px;}
+    .rule{width:58%;margin:0 auto 18px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative;}
+    .rule::after{content:"\266A";position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 12px;color:var(--gold-deep);font-size:15px;}
+    .call{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink);}
+    .phone{font-family:var(--serif);font-weight:700;font-size:50px;line-height:1;color:var(--gold-deep);margin-top:4px;letter-spacing:.01em;}
+    .web{font-size:14px;color:var(--ink);margin-top:9px;}
+    .web b{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--gold-deep);letter-spacing:.02em;}
+    .links{display:flex;justify-content:center;flex-wrap:wrap;gap:5px 22px;margin-top:11px;font-size:13px;color:var(--ink);}
+    .links b{color:var(--gold-deep);font-weight:600;}
+
+    .hint{font-size:12.5px;color:#6f6657;text-align:center;max-width:8.5in;}
+    .hint code{background:#fff;border:1px solid var(--line);border-radius:5px;padding:1px 6px;}
+
+    @media print{
+      @page{size:Letter portrait;margin:0;}
+      html,body{background:#fff;}
+      body{padding:0;gap:0;}
+      .hint{display:none !important;}
+      .sheet{box-shadow:none;width:100%;height:100vh;}
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    }
+  </style>
+</head>
+<body>
+  <p class="hint">Your printable flyer. Press <code>Ctrl</code>+<code>P</code> (or <code>⌘</code>+<code>P</code>) → paper <b>Letter</b>, layout <b>Portrait</b>, margins <b>None</b>, enable <b>Background graphics</b>.</p>
+
+  <div class="sheet">
+    <div class="frame">
+      <p class="eyebrow">Private Piano Lessons</p>
+      <h1>Erin&nbsp;Tabatabaei</h1>
+      <p class="role">Pianist &amp; Teacher · In-Person &amp; Online</p>
+
+      <div class="keys" aria-hidden="true">
+        <i class="b"></i><i class="b"></i><i></i><i class="b"></i><i class="b"></i><i class="b"></i><i></i>
+        <i class="b"></i><i class="b"></i><i></i><i class="b"></i><i class="b"></i><i class="b"></i><i></i>
+      </div>
+
+      <p class="hook">Where technique<br />meets <em>expression</em></p>
+      <p class="sub">Warm, patient lessons tailored to you — from a child's very first notes to
+        advanced repertoire and Royal Conservatory exam preparation.</p>
+
+      <div class="offer">
+        <p class="tag">30-Minute Trial · No Commitment</p>
+        <p class="big">Your First Lesson<br />is <span>Free</span></p>
+        <p class="price">Regular lessons just <b>$50 / hour</b> · flexible scheduling</p>
+      </div>
+
+      <div class="props">
+        <div><span class="ic">♪</span><b>Beginners<br />&amp; Kids</b><small>Welcome &amp; encouraged</small></div>
+        <div><span class="ic">✓</span><b>Exam<br />Preparation</b><small>RCM theory &amp; practical</small></div>
+        <div><span class="ic">♫</span><b>Every<br />Style</b><small>Classical, pop &amp; more</small></div>
+      </div>
+
+      <p class="creds"><span>RCM Level 10 Practical</span><span>ARCT Diploma Candidate</span><span>4+ Years Teaching</span></p>
+
+      <div class="contact">
+        <div class="rule"></div>
+        <p class="call">Call or text today to book your free lesson</p>
+        <p class="phone">(786)&nbsp;583-7981</p>
+        <p class="web">Watch performances &amp; book online at <b>erinpiano.com</b></p>
+        <p class="links"><span><b>Email</b>&nbsp; erintpiano@gmail.com</span><span><b>Instagram</b>&nbsp; @erin.t.piano</span><span><b>TikTok / YouTube</b>&nbsp; @erintpiano</span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
