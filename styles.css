@@ -216,21 +216,21 @@ a { color: inherit; text-decoration: none; }
 
 /* keys ripple as though being played, a wave travelling left to right */
 .gp-key-white {
-  fill: url(#kbWhite); stroke: #cdbb9a; stroke-width: .6;
+  fill: #f5edda; stroke: #cdbb9a; stroke-width: .6;
   transform-box: fill-box; transform-origin: 50% 0;
   animation: kbKeyWhite 4.5s var(--ease) infinite; animation-delay: var(--d, 0s);
 }
 .gp-key-black {
-  fill: url(#kbBlack); stroke: #000; stroke-width: .5;
+  fill: #17130d; stroke: #000; stroke-width: .5;
   transform-box: fill-box; transform-origin: 50% 0;
   animation: kbKeyBlack 4.5s var(--ease) infinite; animation-delay: var(--d, 0s);
 }
 @keyframes kbKeyWhite {
-  0%, 8%, 100% { fill: url(#kbWhite); transform: translateY(0); }
+  0%, 8%, 100% { fill: #f5edda; transform: translateY(0); }
   3%           { fill: #f6e8c6; transform: translateY(5px); }
 }
 @keyframes kbKeyBlack {
-  0%, 8%, 100% { fill: url(#kbBlack); transform: translateY(0); }
+  0%, 8%, 100% { fill: #17130d; transform: translateY(0); }
   3%           { fill: #7a5c28; transform: translateY(5px); }
 }
 
